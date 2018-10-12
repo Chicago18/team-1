@@ -2,5 +2,4 @@
 
 ### Team Members
 - Chuma Okoro
-
-
+- Diana Tu

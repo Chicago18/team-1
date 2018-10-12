@@ -4,3 +4,4 @@
 - Chuma Okoro
 - Diana Tu
 - Adriana Martinez
+- Isabelle De Brabanter

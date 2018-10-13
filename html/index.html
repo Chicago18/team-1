@@ -11,6 +11,11 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<script type="text/javascript" src="//platform.linkedin.com/in.js">
+			api_key: "7891ml72sbx328"
+			authorize: true
+			onLoad: onLinkedInLoad
+		</script>
 	</head>
 	<body class="is-preload">
 
@@ -24,6 +29,7 @@
 							<li><a href="#two">Training Webinars</a></li>
 							<li><a href="#intro" class="button scrolly" id="loginbutton" onclick="test()">LOGIN WITH LINKEDIN</a></li>
 							<!-- <li><a href="#three">Get in touch</a></li> -->
+							<script type="in/Login"></script>
 						</ul>
 					</nav>
 				</div>
@@ -171,6 +177,30 @@
 					</section>
 
 			</div>
+
+			<script type="text/javascript">
+				
+				// Setup an event listener to make an API call once auth is complete
+				function onLinkedInLoad() {
+					IN.Event.on(IN, "auth", getProfileData);
+				}
+			
+				// Handle the successful return from the API call
+				function onSuccess(data) {
+					console.log(data);
+				}
+			
+				// Handle an error response from the API call
+				function onError(error) {
+					console.log(error);
+				}
+			
+				// Use the API call wrapper to request the member's basic profile data
+				function getProfileData() {
+					IN.API.Raw("/people/~").result(onSuccess).error(onError);
+				}
+			
+			</script>
 
 		<!-- Footer -->
 			<footer id="footer" class="wrapper style1-alt">

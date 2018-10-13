@@ -22,6 +22,7 @@
 							<li><a href="#intro">Welcome</a></li>
 							<li><a href="#one">Resource Repository</a></li>
 							<li><a href="#two">Training Webinars</a></li>
+							<li><a href="#intro" class="button scrolly" id="loginbutton" onclick="test()">LOGIN WITH LINKEDIN</a></li>
 							<!-- <li><a href="#three">Get in touch</a></li> -->
 						</ul>
 					</nav>
@@ -39,7 +40,7 @@
 							<!-- <p><i>An online resource with materials from <a href="https://www.outandequal.org">Out & Equal.</a></i></p> -->
 							<p><i>"Diversity is being invited to the party. Inclusion is being asked to dance" - Vernã Myers</i></p>
 							<!-- <p class="actions"> -->
-								<p><a href="#one" class="button scrolly">LOGIN WITH LINKEDIN</a></p>
+								
 							<!-- </p> -->
 						</div>
 					</section>
@@ -180,6 +181,13 @@
 			</footer>
 
 		<!-- Scripts -->
+		<script>
+			function test(){
+				console.log("clicekd");
+				///start auth flow 
+				document.getElementById('loginbutton').innerHTML="NAME";
+			}
+		</script>
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/jquery.scrollex.min.js"></script>
 			<script src="assets/js/jquery.scrolly.min.js"></script>

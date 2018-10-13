@@ -48,7 +48,13 @@
 			<artifactId>bootstrap</artifactId>
 			<version>3.3.7</version>
 		</dependency>
+		<dependency>
+  <groupId>com.google.cloud</groupId>
+  <artifactId>google-cloud-storage</artifactId>
+  <version>1.48.0</version>
+	</dependency>
 	</dependencies>
+
 
 	<build>
 		<plugins>

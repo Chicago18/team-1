@@ -11,9 +11,6 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="/css/main.css" />
 		<noscript><link rel="stylesheet" href="/css/noscript.css" /></noscript>
-		<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-		<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-		<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 	</head>
 	<body class="is-preload">
 
@@ -23,73 +20,53 @@
 				<a href="index.html" class="title"></a>
 				<nav>
 					<ul>
-						<li><a href="index.html">Home</a></li>
-						<li><a href="repo.html" class="active">Repository</a></li>
+							<li><a href="index.html">Home</a></li>
+							<li><a href="repo.html" class="active">Repository</a></li>
+							<li><a href="youtube.html">Training</a></li>
 					</ul>
 				</nav>
 			</header>
 
 		<!-- Wrapper -->
 			<div id="wrapper">
-
 				<!-- Main -->
-					<section id="main" class="wrapper">
+					<section id="main" class="wrapper" style="background-color: #776f8c">
 						<div class="inner">
 							<h1 class="major">Resource Repository</h1>
-							<div class="container">
-									<div class="row">
-										<div class="col-md-12">
-											<div class="input-group" id="adv-search">
-												<input type="text" class="form-control" placeholder="Search for snippets" />
-												<div class="input-group-btn">
-													<div class="btn-group" role="group">
-														<div class="dropdown dropdown-lg">
-															<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><span class="caret"></span></button>
-															<div class="dropdown-menu dropdown-menu-right" role="menu">
-																<form class="form-horizontal" role="form">
-																  <div class="form-group">
-																	<label for="filter">Filter by</label>
-																	<select class="form-control">
-																		<option value="0" selected>All Snippets</option>
-																		<option value="1">Featured</option>
-																		<option value="2">Most popular</option>
-																		<option value="3">Top rated</option>
-																		<option value="4">Most commented</option>
-																	</select>
-																  </div>
-																  <div class="form-group">
-																	<label for="contain">Author</label>
-																	<input class="form-control" type="text" />
-																  </div>
-																  <div class="form-group">
-																	<label for="contain">Contains the words</label>
-																	<input class="form-control" type="text" />
-																  </div>
-																  <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
-																</form>
-															</div>
-														</div>
-														<button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
-													</div>
-												</div>
-											</div>
-										  </div>
-										</div>
-									</div>
-								</div>
+							<div style="width: 50%;">
+								<form>
+									<label for="filter">Filter by document type:</label>
+									<select>
+										<option value="0" selected>ppt</option>
+										<option value="1">pdf</option>
+										<option value="2">doc/docx</option>
+									</select>
+									<label>Keywords</label>
+
+									<label>Search by Subject</label>
+										<input type="radio" name="subject" value="diversity" checked> Diversity<br>
+										<input type="radio" name="subject" value="lgbtq+"> LGBTQ+<br>
+										<input type="radio" name="subject" value="summit"> Summit 
+								</form>
+							</div>			
 						</div>
 					</section>
-
 			</div>
 
-		<!-- Footer -->
-			<footer id="footer" class="wrapper alt">
-				<div class="inner">
-					<ul class="menu">
-						<li>&copy; Out & Equal. All rights reserved.</li>
-					</ul>
-				</div>
-			</footer>
+<!-- Footer -->
+<footer id="footer" class="wrapper style1-alt">
+		<div class="inner">
+			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+			<a href="https://www.facebook.com/outequal/" class="fa fa-facebook"></a>
+			<a href="https://twitter.com/outandequal" class="fa fa-twitter"></a>
+			<a href="https://www.instagram.com/outandequal/?hl=en" class="fa fa-instagram"></a>
+			<a href="https://www.linkedin.com/company/out-&-equal-workplace-advocates" class="fa fa-linkedin"></a>
+			<ul class="menu">
+
+				<li>&copy; Out & Equal. All rights reserved.</li>
+			</ul>
+		</div>
+	</footer>
 
 		<!-- Scripts -->
 			<script src="/js/jquery.min.js"></script>

@@ -40,6 +40,22 @@ blockquote, q {
 	quotes: none;
 }
 
+
+.fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 30px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+
 	blockquote:before, blockquote:after, q:before, q:after {
 		content: '';
 		content: none;

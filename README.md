@@ -7,6 +7,9 @@
 - Diana Tu
 - Isabelle De Brabanter
 
+### Check out the web app online
+- ```https://fast-savannah-83558.herokuapp.com```
+
 ### How to Run
 1. run ```git clone https://github.com/Chicago18/team-1.git``` to clone the repo
 2. open project in your IDE

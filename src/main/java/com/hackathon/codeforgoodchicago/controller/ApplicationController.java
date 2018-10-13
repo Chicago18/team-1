@@ -1,16 +1,21 @@
 package com.hackathon.codeforgoodchicago.controller;
 
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class ApplicationController {
 	
-	@RequestMapping(path ="/", method=RequestMethod.GET)
-	public String index() {
-		return "Welcome to the Digital Hub";
+	@GetMapping("/greeting")
+	public String greeting(@RequestParam(name="name", required=false, defaultValue="World") String name, Model model) {
+		
+	    model.addAttribute("name", name);
+	    return "greeting";
 	}
 	
 
 }
+
+

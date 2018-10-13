@@ -9,20 +9,56 @@
 		<title>Out & Equal</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<link rel="stylesheet" href="/css/main.css" />
+		<noscript><link rel="stylesheet" href="/css/noscript.css" /></noscript>
+		<script type="text/javascript" src="//platform.linkedin.com/in.js">
+			api_key:   7891ml72sbx328
+			onLoad:    onLinkedInLoad
+			authorize: true
+		</script>
+		<script type="text/javascript">
+			
+			// Setup an event listener to make an API call once auth is complete
+			function onLinkedInLoad() {
+				IN.Event.on(IN, "auth", getProfileData);
+			}
+		
+			// Handle the successful return from the API call
+			function onSuccess(data) {
+				console.log(data);
+				document.getElementById("welcome").append("Welcome "+data.firstName +" " +data.lastName);
+				document.getElementById("signout").append("Sign Out");
+			}
+		
+			// Handle an error response from the API call
+			function onError(error) {
+				console.log(error);
+			}
+		
+			// Use the API call wrapper to request the member's basic profile data
+			function getProfileData() {
+				IN.API.Raw("/people/~").result(onSuccess).error(onError);
+			}
+
+			function closeSession(){
+   				IN.User.logout();
+				document.getElementById("welcome").innerHTML = "";
+				document.getElementById("signout").innerHTML = "";
+   				return true;
+			}
+		
+		</script>
 	</head>
 	<body class="is-preload">
-
 		<!-- Sidebar -->
 			<section id="sidebar">
 				<div class="inner">
 					<nav>
 						<ul>
 							<li><a href="#intro">Welcome</a></li>
-							<li><a href="#one">Information</a></li>
-							<li><a href="#two">What We Do</a></li>
-							<!-- <li><a href="#three">Get in touch</a></li> -->
+							<li><a href="#one">Resource Repository</a></li>
+							<li><a href="#two">Training Webinars</a></li>
+							<!--<li><a href="#intro" class="button scrolly" id="loginbutton" onclick="test()">LOGIN WITH LINKEDIN</a></li> -->
 						</ul>
 					</nav>
 				</div>
@@ -34,9 +70,16 @@
 				<!-- Intro -->
 					<section id="intro" class="wrapper style1 fullscreen fade-up">
 						<div class="inner" style="text-align: center;">
-							<h1>Welcome to the Digital Hub</h1>
-							<p>An online resource with materials from <a href="https://www.outandequal.org">Out & Equal.</a></p>
+							<img src="images/logo.png">
+							<h1><i>Welcome to the Digital Hub</i></h1>
+							<!-- <p><i>An online resource with materials from <a href="https://www.outandequal.org">Out & Equal.</a></i></p> -->
 							<p><i>"Diversity is being invited to the party. Inclusion is being asked to dance" - Vernã Myers</i></p>
+							<!-- <p class="actions"> -->
+							<script type="in/Login"></script>
+							<p id="welcome"> </p>
+							<a id="signout" onclick="return closeSession()"></a>
+								
+							<!-- </p> -->
 						</div>
 					</section>
 
@@ -45,7 +88,7 @@
 				<!-- One -->
 					<section id="one" class="wrapper style2 spotlights">
 						<section>
-							<a href="#" class="image"><img src="images/pic01.jpg" alt="" data-position="center center" /></a>
+							<a href="#" class="image"><img src="images/infographic.jpg" alt="" data-position="center center" /></a>
 							<div class="content">
 								<div class="inner">
 									<h2>Resource Repository</h2>
@@ -56,8 +99,8 @@
 								</div>
 							</div>
 						</section>
-						<section>
-							<a href="#" class="image"><img src="images/pic02.jpg" alt="" data-position="top center" /></a>
+						<section id="two" class="wrapper style2 spotlights">
+							<a href="#" class="image"><img src="images/webinar.jpg" alt="" data-position="top center" /></a>
 							<div class="content">
 								<div class="inner">
 									<h2>Training Webinars</h2>
@@ -71,10 +114,11 @@
 					</section>
 
 				<!-- Two -->
-					<section id="two" class="wrapper style3 fade-up">
+					<!-- <section id="two" class="wrapper style3 fade-up">
 						<div class="inner">
 							<h2>What we do</h2>
-							<p>Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus, lacus eget hendrerit bibendum, urna est aliquam sem, sit amet imperdiet est velit quis lorem.</p>
+							<p> Out & Equal Workplace Advocates is the world’s premier nonprofit organization dedicated to achieving lesbian, gay, bisexual, transgender, and queer workplace equality. 
+							We partner with Fortune 1000 companies and government agencies to provide executive leadership development, comprehensive training and consultation, and professional networking opportunities that build inclusive and welcoming work environments.  </p>
 							<div class="features">
 								<section>
 									<span class="icon major fa-code"></span>
@@ -111,7 +155,7 @@
 								<li><a href="generic.html" class="button">Learn more</a></li>
 							</ul>
 						</div>
-					</section>
+					</section> -->
 
 				<!-- Three -->
 					<!-- <section id="three" class="wrapper style1 fade-up">
@@ -169,20 +213,26 @@
 		<!-- Footer -->
 			<footer id="footer" class="wrapper style1-alt">
 				<div class="inner">
+					<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+					<a href="https://www.facebook.com/outequal/" class="fa fa-facebook"></a>
+					<a href="https://twitter.com/outandequal" class="fa fa-twitter"></a>
+					<a href="https://www.instagram.com/outandequal/?hl=en" class="fa fa-instagram"></a>
+					<a href="https://www.linkedin.com/company/out-&-equal-workplace-advocates" class="fa fa-linkedin"></a>
 					<ul class="menu">
+
 						<li>&copy; Out & Equal. All rights reserved.</li>
 					</ul>
 				</div>
 			</footer>
 
 		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+			<script src="/js/jquery.min.js"></script>
+			<script src="/js/jquery.scrollex.min.js"></script>
+			<script src="/js/jquery.scrolly.min.js"></script>
+			<script src="/js/browser.min.js"></script>
+			<script src="/js/breakpoints.min.js"></script>
+			<script src="/js/util.js"></script>
+			<script src="/js/main.js"></script>
 
 	</body>
 </html>
